@@ -1,6 +1,5 @@
 //
-//  顺序表
-//  Vector
+//  顺序表 Vector
 //
 //  Created by 巫瑞轩 on 2021/8/17.
 //
@@ -9,11 +8,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define COLOR(a, b) "\033[" #b "m" a "\033[0m"
-#define GREEN(a) COLOR(a, 32)
-
 // 结构定义
-typedef struct Vector {
+typedef struct vector {
     int *data;
     int size, length;
 } Vector;
@@ -26,7 +22,7 @@ int insert(Vector *, int, int);
 int erase(Vector *, int);
 void output(Vector *);
 
-int main() {
+int main(int argc, char const *argv[]) {
     // 使用随机函数必须先初始化随机数发生器(需要引入time.h)
     srand(time(0));
     // 随机执行操作的次数
@@ -80,16 +76,18 @@ void clear(Vector *v) {
 
 // 扩容
 int expand(Vector *v) {
-    int extr_size = v->size;
+    int extraSize = v->size;
     int *p;
-    while (extr_size) {
-        p = (int *)realloc(v->data, sizeof(int) * (v->size + extr_size));
+    while (extraSize) {
+        p = (int *)realloc(v->data, sizeof(int) * (v->size + extraSize));
         if (p != NULL) break;
-        extr_size >>= 1;
+        // 等同于 extraSize /= 2
+        extraSize >>= 1;
     }
+    // 没有剩余空间可以开辟
     if (p == NULL) return 0;
     v->data = p;
-    v->size += extr_size;
+    v->size += extraSize;
     return 1;
 }
 
@@ -98,7 +96,7 @@ int insert(Vector *v, int idx, int val) {
     if (v == NULL) return 0;
     if (v->length == v->size) {
         if (!expand(v)) return 0;
-        printf(GREEN("success to expand! the size = %d\n"), v->size);
+        printf("success to expand! the size = %d\n", v->size);
     }
     if (idx < 0 || idx > v->length) return 0;
     // 从末尾开始依次往前挪，反之则会出现后面挪动的值被第一个挪动的值所覆盖的情况
