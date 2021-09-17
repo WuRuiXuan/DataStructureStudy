@@ -1,5 +1,5 @@
 //
-//  二叉树线索化 ThreadTree
+//  线索化二叉树 ThreadTree
 //
 //  Created by 巫瑞轩 on 2021/9/17.
 //

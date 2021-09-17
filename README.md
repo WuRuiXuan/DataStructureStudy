@@ -15,3 +15,5 @@
 二叉排序树 - BinaryTree
 
 广义表转二叉树 - TableToTree
+
+线索化二叉树 - ThreadTree
