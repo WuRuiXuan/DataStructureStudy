@@ -17,3 +17,7 @@
 广义表转二叉树 - TableToTree
 
 线索化二叉树 - ThreadTree
+
+稳定排序 - StableSort
+
+非稳定排序 - UnstableSort
