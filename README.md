@@ -21,3 +21,7 @@
 稳定排序 - StableSort
 
 非稳定排序 - UnstableSort
+
+二分查找 - BinarySearch
+
+哈希表 - HashTable

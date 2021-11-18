@@ -1,5 +1,5 @@
 //
-//  二分查找 BinarySearch
+//  二分查找（需满足单调性） BinarySearch
 //
 //  Created by 巫瑞轩 on 2021/10/31.
 //
@@ -30,6 +30,7 @@ int main(int argc, char const *argv[])
 	return 0;
 }
 
+// 二分查找(nlogn)
 int binarySearch(int *arr, int n, int x) {
 	int head = 0, tail = n - 1, mid;
 	while (head <= tail) {
