@@ -53,7 +53,7 @@ int main(int argc, char const *argv[]) {
 		}
 		output(l), printf("\n");
 	}
-	#undef MAX_OP;
+	#undef MAX_OP
 	clear(l);
 	return 0;
 }
